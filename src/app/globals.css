@@ -11,9 +11,18 @@ html {
 body {
   @apply bg-neutral-800 text-neutral-100;
   min-height: 120vh;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  width: 100vw;
+  overflow-x: hidden;
 }
 
 ::-webkit-scrollbar {
   width: 0;
   height: 0;
+}
+
+.container {
+  max-width: 1248px !important;
+  @apply mx-6 w-full px-6;
 }
