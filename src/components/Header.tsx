@@ -4,7 +4,6 @@ import { useState, useRef, useCallback, useMemo } from 'react';
 import Image from 'next/image';
 import Button from '@/components/ui/Button';
 import { motion, AnimatePresence } from 'framer-motion';
-import Link from 'next/link';
 
 const LINKS = [
   { label: 'Solutions', width: 320, height: 220 },
