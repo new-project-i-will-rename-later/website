@@ -29,6 +29,7 @@ export default function Header() {
 
   const linksRef = useRef<HTMLDivElement>(null);
   const lastHoveredLink = useRef<string | null>(null);
+  const [mobileMenu, setMobileMenu] = useState<boolean>(false);
 
   const handleMouseEnter = useCallback(
     (label: string, index: number) => {
@@ -72,12 +73,12 @@ export default function Header() {
 
   return (
     <div className="container">
-      <div className="border-gray-500 flex w-full max-w-[1200px] items-center gap-16 border border-t-0 border-neutral-700 p-8">
+      <div className="border-gray-500 relative flex w-full max-w-[1200px] items-center gap-16 border border-t-0 border-neutral-700 p-8">
         <div className="flex flex-none items-center gap-3">
           <Image src="/logo.svg" alt="logo" width={40} height={40} />
           <p className="text-[24px] font-medium max-md:hidden">Unknown</p>
         </div>
-        <div ref={linksRef} className="relative flex items-center text-neutral-300 max-lg:hidden">
+        <div ref={linksRef} className="flex items-center text-neutral-300 max-lg:hidden">
           {LINKS.map(({ label }, index) => (
             <p key={label} onMouseEnter={() => handleMouseEnter(label, index)} onMouseLeave={handleMouseLeave} className={`cursor-default p-3 hover:bg-neutral-700 ${hoveredLink === label ? 'bg-neutral-700 text-neutral-100' : ''}`}>
               {label}
@@ -113,14 +114,32 @@ export default function Header() {
           </AnimatePresence>
         </div>
         <div className="ml-auto flex items-center gap-4">
-          <Button className="max-sm:hidden" href="/get-started" size="large">
+          <Button className="max-lg:hidden" href="/get-started" size="large">
             Get Started
             <i className="ri-arrow-right-up-line text-[24px] transition group-hover:rotate-45"></i>
           </Button>
-          <button className="aspect-square h-[46] text-4xl text-neutral-200 lg:hidden">
+          <button onClick={() => setMobileMenu(true)} className="aspect-square h-[46] text-4xl text-neutral-200 lg:hidden">
             <i className="ri-menu-3-line" />
           </button>
         </div>
+        <AnimatePresence mode="wait">
+          {mobileMenu && (
+            <motion.div className={'fixed left-0 top-0 flex h-screen w-screen flex-col gap-6 bg-neutral-800 px-[57] py-8'}>
+              <div className={'flex w-full items-center justify-end'}>
+                <button onClick={() => setMobileMenu(false)} className="aspect-square h-[46] text-4xl text-neutral-200 lg:hidden">
+                  <i className="ri-close-line" />
+                </button>
+              </div>
+              <div className={'flex flex-col gap-2'}>
+                <p>links will be here</p>
+              </div>
+              <Button className="w-full" href="/get-started" size="large">
+                Get Started
+                <i className="ri-arrow-right-up-line text-[24px] transition group-hover:rotate-45"></i>
+              </Button>
+            </motion.div>
+          )}
+        </AnimatePresence>
       </div>
     </div>
   );
