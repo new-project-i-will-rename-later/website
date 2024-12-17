@@ -77,7 +77,7 @@ export default function Header() {
           <Image src="/logo.svg" alt="logo" width={40} height={40} />
           <p className="text-[24px] font-medium max-md:hidden">Unknown</p>
         </div>
-        <div ref={linksRef} className="flex items-center text-neutral-300 max-lg:hidden">
+        <div ref={linksRef} className="relative flex items-center text-neutral-300 max-lg:hidden">
           {LINKS.map(({ label }, index) => (
             <p key={label} onMouseEnter={() => handleMouseEnter(label, index)} onMouseLeave={handleMouseLeave} className={`cursor-default p-3 hover:bg-neutral-700 ${hoveredLink === label ? 'bg-neutral-700 text-neutral-100' : ''}`}>
               {label}
