@@ -35,7 +35,6 @@ export default function Faq() {
 
   return (
     <div className={'flex w-full flex-col items-center'}>
-      <div className={'h-[1px] w-full bg-neutral-700'} />
       <div className={'container'}>
         <div className={'flex w-full flex-col border-x border-neutral-700 p-8 pb-32'}>
           <div className={'flex w-full items-start gap-[120] max-lg:flex-col max-lg:gap-12'}>

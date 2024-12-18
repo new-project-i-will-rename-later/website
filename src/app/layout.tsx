@@ -4,6 +4,7 @@ import './globals.css';
 
 import Header from '@/components/Header';
 import Footer from '@/components/Footer';
+import Divider from '@/components/Divider';
 
 const geistVF = localFont({
   src: './fonts/GeistVF.woff',
@@ -26,6 +27,7 @@ export default function RootLayout({
       <body className={geistVF.className + ' flex flex-col items-center'}>
         <Header />
         {children}
+        <Divider />
         <Footer />
       </body>
     </html>
