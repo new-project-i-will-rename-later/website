@@ -1,5 +1,6 @@
 import Link from 'next/link';
 import Image from 'next/image';
+import Divider from '@/components/Divider';
 
 const footerLinks = [
   {
@@ -49,6 +50,7 @@ const footerLinks = [
 export default function Footer() {
   return (
     <div className={'mt-auto flex w-full flex-col items-center'}>
+      <Divider />
       <div className={'container'}>
         <div className={'flex flex-col border-x border-neutral-700'}>
           <div className={'w-full p-8'}>

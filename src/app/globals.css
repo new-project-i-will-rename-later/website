@@ -33,3 +33,9 @@ body {
     height 0.2s,
     left 0.2s;
 }
+
+.error-gradient {
+  background: radial-gradient(96.87% 153.33% at 50% -44.17%, #fff 0%, rgba(255, 255, 255, 0) 90%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
