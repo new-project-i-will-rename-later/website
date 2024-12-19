@@ -7,7 +7,7 @@ export default {
       neutral: {
         100: '#FFFFFF',
         200: '#CCCCCC',
-        300: '#666666',
+        300: '#8A8A8A',
         400: '#3B3B3B',
         500: '#262626',
         600: '#1D1D1D',
